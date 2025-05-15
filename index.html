@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hello! I'm Shrisha</title>
+<style>
+  body, html {
+    margin: 0; padding: 0; height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .container {
+    width: 1920px;
+    height: 1080px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .center-text {
+    grid-column: 2 / span 2;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .center-text h1 {
+    font-size: 100px;
+    margin: 0;
+  }
+
+  .center-text p {
+    font-size: 55px;
+    margin: 0;
+  }
+
+  .button-group {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    width: 100%;
+    padding: 0 60px;
+    box-sizing: border-box;
+  }
+
+  .button-group button {
+    background-color: #ffb6c1;
+    border: none;
+    border-radius: 30px;
+    padding: 25px 30px;
+    font-size: 26px;
+    font-weight: 600;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+
+  .button-group button:hover {
+    background-color: #ff99aa;
+  }
+
+  .bottom-right-image {
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+    justify-self: center;
+    align-self: center;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="center-text">
+    <h1>Hello! I'm Shrisha</h1>
+    <p>Welcome to my personal website</p>
+    <div class="button-group">
+      <button onclick="location.href='about.html'">About Me</button>
+      <button onclick="location.href='projects.html'">Projects</button>
+      <button onclick="window.open('https://www.linkedin.com/in/shrishasathishkumar/', '_blank')">LinkedIn</button>
+      <button onclick="window.open('https://github.com/shrishasat', '_blank')">GitHub</button>
+    </div>
+  </div>
+
+  <img src="image1.png" alt="Bottom Right Image" class="bottom-right-image" />
+</div>
+
+</body>
+</html>

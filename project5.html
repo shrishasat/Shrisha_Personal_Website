@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Neurolinguistic MEG Research</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f8ff;
+      margin: 40px;
+      color: #222;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #0a4d8c;
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+    }
+    h2 {
+      color: #034f84;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+    p, ul {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 20px 0;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #0a4d8c;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .button:hover {
+      background-color: #063f6b;
+    }
+    .code-block {
+      background: #e8f0fe;
+      border-left: 5px solid #0a4d8c;
+      padding: 15px 20px;
+      font-family: 'Courier New', Courier, monospace;
+      overflow-x: auto;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Investigating Neural Mechanisms Underlying Metaphor and Iconicity Comprehension</h1>
+
+    <img src="Observers_Visual_Field.png" alt="Observer's Visual Field" />
+    <img src="Neurolingu-paradigm.png" alt="Experimental Paradigm" />
+    <img src="Neurolingu-EVR.png" alt="Evoked Related Field (ERF)" />
+
+    <h2>Software Used</h2>
+    <p>MNE-Python for MEG data analysis and preprocessing.<br />
+    Paradigm developed using PsychoPy coder.</p>
+
+    <h2>Preprocessing Pipeline Steps</h2>
+    <div class="code-block">
+Maxwell.find_bad_channels_maxwell() &amp; remove them using .drop_channels()<br />
+tsss(st_correlation=0.95, tsss_duration=15)<br />
+Bandpass Filter [0.3, 100] &amp; Notch Filter [50, 100]<br />
+Find EOG events (thresh=500e-6) &amp; annotate muscle z-score (thresh=10) &amp; manual annotation of noisy segments on raw.plot()<br />
+ICA ("fastica", n=20)<br />
+Stimulus – word appearing slide – STI002, event_id=5 (consider odd event indices)<br />
+Epoching (tmin=-1, tmax=2.5), baseline (-1, 0), linear detrending (detrend=1)
+    </div>
+
+    <h2>Study Details</h2>
+    <p>This neurolinguistic study investigates neural responses to two types of metaphor stimuli:</p>
+    <ul>
+      <li><strong>Same-sensory metaphors:</strong> e.g., <em>“tender touch”</em> (haptic stimuli), <em>“crunching”</em> (auditory)</li>
+      <li><strong>Cross-sensory metaphors:</strong> e.g., <em>“blonde”</em> (visual + auditory), <em>“smooth picture”</em> (haptic + visual)</li>
+    </ul>
+    <p>The aim is to investigate how the brain processes linguistic metaphors involving different sensory modalities.</p>
+   
+    <h3>Time-Frequency Analysis</h3>
+     <div class="images-section">
+      <div class="image-box">
+        <img src="time_frequency_broca_same_sensory.png" alt="Time Frequency Analysis - Same Sensory Metaphors" />
+        <div class="caption">Time-Frequency Analysis of Broca's Area (G Front-Inf-Opercular L) in Right-Handed Subject - Same Sensory Metaphors</div>
+      </div>
+      <div class="image-box">
+        <img src="time_frequency_broca_cross_sensory.png" alt="Time Frequency Analysis - Cross Sensory Metaphors" />
+        <div class="caption">Time-Frequency Analysis of Broca's Area (G Front-Inf-Opercular L) in Right-Handed Subject - Cross Sensory Metaphors</div>
+      </div>
+    </div>
+  </div>
+
+
+    <a href="projects.html" class="button">← Back to Projects</a>
+  </div>
+</body>
+</html>

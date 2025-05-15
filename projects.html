@@ -1,0 +1,186 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Projects</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 60px;
+      background-color: #ffe6f0; /* very light pink */
+      font-family: 'Segoe Print', cursive, Arial, sans-serif;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 80px;
+      margin-bottom: 50px;
+      font-weight: bold;
+      text-align: center;
+      color: #d14772; /* darker pink */
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      width: 100%;
+      max-width: 1400px;
+    }
+
+    .project-box {
+      position: relative;
+      width: 100%;
+      padding-top: 75%; /* 4:3 aspect ratio */
+      background-color: #fff0f6; /* very very light pink */
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(209, 161, 190, 0.3);
+      transition: background-color 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .project-box img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      transition: filter 0.3s ease;
+    }
+
+    .project-box:hover {
+      background-color: white;
+      box-shadow: 0 8px 20px rgba(180, 0, 50, 0.3);
+    }
+
+    .project-box:hover img {
+      filter: blur(4px) brightness(70%);
+    }
+
+    .project-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: transparent;
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+      pointer-events: none;
+      transition: color 0.3s ease;
+      font-family: 'Segoe Print', cursive;
+      user-select: none;
+    }
+
+    .project-box:hover .project-label {
+      color: black;
+      pointer-events: auto;
+    }
+
+    /* Cute pink back button */
+    .back-button-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    .back-button {
+      background-color: #ffb6c1;
+      border: none;
+      border-radius: 30px;
+      padding: 25px 60px;
+      font-size: 32px;
+      font-weight: 600;
+      color: black;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: none;
+    }
+    .back-button:hover {
+      background-color: #ff99aa;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Projects</h1>
+
+  <div class="grid-container">
+    <div class="project-box" onclick="window.open('https://shrishasat.wixsite.com/pretermproject', '_blank')">
+      <img src="project1.jpg" alt="Project 1" />
+      <div class="project-label">Preterm Project</div>
+    </div>
+
+    <div class="project-box" onclick="window.open('https://ieeexplore.ieee.org/document/10009344', '_blank')">
+      <img src="project2.png" alt="Project 2" />
+      <div class="project-label"> IR-RING Project</div>
+    </div>
+
+    <div class="project-box" onclick="window.open('project3.html', '_blank')">
+      <img src="project3.png" alt="Project 3" />
+      <div class="project-label">Umpire Decision Making Bias Project</div>
+    </div>
+
+
+    <div class="project-box" onclick="window.open('project4.html', '_blank')">
+      <img src="project4.jpg" alt="Project 4" />
+      <div class="project-label">Bioastronautics Literature Review</div>
+    </div>
+
+    <div class="project-box" onclick="window.open('project5.html', '_blank')">
+      <img src="project5.png" alt="Neurolinguistic MEG Project" />
+      <div class="project-label">Project 5</div>
+    </div>
+
+    <div class="project-box" onclick="window.open('project6.html', '_blank')">
+      <img src="project6.png" alt="Project 6" />
+      <div class="project-label">MRI Preprocessing Project</div>
+    </div>
+
+    <div class="project-box" onclick="window.open('https://example.com/project7', '_blank')">
+      <img src="images/project7.png" alt="Project 7" />
+      <div class="project-label">Project 7</div>
+    </div>
+
+    <div class="project-box" onclick="window.open('https://example.com/project8', '_blank')">
+      <img src="images/project8.png" alt="Project 8" />
+      <div class="project-label">Project 8</div>
+    </div>
+
+    <div class="project-box" onclick="window.open('https://example.com/project9', '_blank')">
+      <img src="images/project9.png" alt="Project 9" />
+      <div class="project-label">Project 9</div>
+    </div>
+
+    <div class="project-box" onclick="window.open('https://example.com/project10', '_blank')">
+      <img src="images/project10.png" alt="Project 10" />
+      <div class="project-label">Project 10</div>
+    </div>
+
+    <div class="project-box" onclick="window.open('https://example.com/project11', '_blank')">
+      <img src="images/project11.png" alt="Project 11" />
+      <div class="project-label">Project 11</div>
+    </div>
+
+    <div class="project-box" onclick="window.open('https://example.com/project12', '_blank')">
+      <img src="images/project12.png" alt="Project 12" />
+      <div class="project-label">Project 12</div>
+    </div>
+  </div>
+
+  <div class="back-button-container">
+    <button class="back-button" onclick="location.href='index.html'">← Back</button>
+  </div>
+
+</body>
+</html>
