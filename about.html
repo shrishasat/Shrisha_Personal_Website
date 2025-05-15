@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me - Shrisha</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      font-family: 'Comic Sans MS', 'Segoe Print', cursive;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-gap: 50px;
+      padding: 60px;
+      align-items: start;
+    }
+
+    .image-container {
+      position: relative;
+    }
+
+    .image-container img {
+      width: 600px;
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .speech-bubble {
+      position: absolute;
+      top: 40px;
+      left: 500px;
+      background: #ffdee9;
+      border-radius: 30px;
+      padding: 20px 30px;
+      font-size: 28px;
+      color: #333;
+      border: 2px dashed #ff9fb2;
+      font-weight: bold;
+      font-family: 'Segoe Print', cursive;
+      transform: rotate(-3deg);
+    }
+
+    .text-block {
+      padding-top: 30px;
+    }
+
+    .name-tag {
+      font-size: 60px;
+      font-weight: bold;
+      color: #ff7c98;
+      font-family: 'Segoe Print', cursive;
+      margin-bottom: 20px;
+    }
+
+    .about-para {
+      font-size: 22px;
+      line-height: 1.7;
+      text-align: justify;
+      max-width: 800px;
+      color: #444;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Left Column: Image & Bubble -->
+    <div class="image-container">
+      <img src="image2.png" alt="Shrisha's Photo" />
+      <div class="speech-bubble">Yep! That's me</div>
+    </div>
+
+    <!-- Right Column: Name & Bio -->
+    <div class="text-block">
+      <div class="name-tag">About me</div>
+      <div class="about-para">
+        Howdy! I started off with a background in <strong>Biomedical Engineering</strong> and went on to do my <strong>Master’s in Computational Neuroscience and Cognitive Robotics</strong>. Sounds fun, right? 😄 <br><br>
+        I’ve worked on all sorts of things — from building medical device to brain modeling. I'm super curious about <strong>bioastronautics</strong> (yep, space + biology!), and when I’m not geeking out on neurons, you’ll find me passionately discussing <strong>cricket</strong>. It’s more than just a game! 🏏<br><br>
+        Thanks for stopping by — this little space is all about sharing what I’ve worked on and what makes me, well... me! 💫
+      </div>
+    </div>
+  </div>
+
+ <!-- Cute Back Button -->
+<div style="width: 100%; display: flex; justify-content: center; margin-top: 40px;">
+  <button class="back-button" onclick="location.href='index.html'">← Back</button>
+</div>
+<style>
+.back-button {
+  background-color: #ffb6c1;  /* baby pink */
+  border: none;
+  border-radius: 30px;
+  padding: 25px 60px;
+  font-size: 32px;
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: none; /* remove extra shadow to match front page buttons */
+}
+
+.back-button:hover {
+  background-color: #ff99aa;
+}
+</style>
+</body>
+</html>
+
