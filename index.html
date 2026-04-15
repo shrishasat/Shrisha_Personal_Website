@@ -56,7 +56,7 @@ html,body{
 /* ================= HEADER ================= */
 .header{
   text-align:center;
-  font-size:64px;
+  font-size:70px;
   font-weight:bold;
   padding:18px;
   border-bottom:1px solid rgba(0,0,0,0.1);
@@ -81,7 +81,7 @@ html,body{
 
 /* NAV LINKS */
 .left a{
-  font-size:24px;
+  font-size:30px;
   font-weight:bold;
   text-decoration:none;
   color:#222;
@@ -105,7 +105,7 @@ html,body{
 /* HEART BOX */
 .heartBox{
   margin-top:auto;
-  height:170px;
+  height:220px;
   border-radius:15px;
   background:rgba(255,255,255,0.4);
   overflow:hidden;
@@ -117,7 +117,7 @@ html,body{
   padding: 16px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  font-family: 'Segoe UI', sans-serif;
+  font-family:'Courier New';
   margin-bottom: 15px;
   position: relative;
   overflow: hidden;
@@ -139,7 +139,7 @@ html,body{
 /* main link */
 .featured-link {
   display: inline-block;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 600;
   color: #ff2ea6;
   text-decoration: none;
@@ -156,7 +156,7 @@ html,body{
 
 /* small helper text */
 .subtext {
-  font-size: 12px;
+  font-size: 20px;
   color: #7f8c8d;
   margin-top: 6px;
 }
@@ -179,7 +179,7 @@ html,body{
 .content{
   flex:1;
   overflow:auto;
-  font-size:16px;
+  font-size:25px;
   line-height:1.6;
 }
 
@@ -206,13 +206,13 @@ html,body{
   border-radius:15px;
   padding:12px;
   box-shadow:0 5px 15px rgba(0,0,0,0.1);
-  font-size:13px;
+  font-size:20px;
 }
 
 .skillsBox{
   flex:1;
   overflow:hidden;
-  font-size:12px;
+  font-size:20px;
   line-height:1.4;
 }
 
@@ -224,7 +224,7 @@ html,body{
 
 .skill-section b{
   color:#ff2ea6;
-  font-size:13px;
+  font-size:20px;
 }
 
 
@@ -444,8 +444,8 @@ function animate(){
 
   let beat=Math.sin(time);
 
-  /* 👇 SMALL HEART SIZE */
-  let scale=1.8+beat*0.6;
+  /*  SMALL HEART SIZE */
+  let scale=2.5+beat*0.6;
 
   let dis=beat>0.9;
 
