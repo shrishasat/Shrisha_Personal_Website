@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Projects | Portfolio</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Courier New", monospace;
+}
+
+body{
+  height:100vh;
+  overflow:hidden;
+  background:url("background.png") center/cover no-repeat;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(255,255,255,0.18);
+  z-index:0;
+}
+
+/* ================= CAROUSEL ================= */
+.top{
+  height:45%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  z-index:1;
+}
+
+.carousel{
+  display:flex;
+  gap:20px;
+  width:90%;
+  overflow-x:auto;
+  padding:20px;
+}
+
+.card{
+  min-width:220px;
+  height:120px;
+  background:rgba(255,255,255,0.85);
+  border-radius:15px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:0.3s;
+  border:1px solid rgba(255,0,150,0.3);
+}
+
+.card:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 15px rgba(255,0,150,0.4);
+}
+
+.title{ font-weight:bold; }
+.subtitle{ font-size:12px; opacity:0.7; }
+
+/* ================= BOTTOM ================= */
+.bottom{
+  height:55%;
+  background:rgba(255,255,255,0.92);
+  border-radius:25px 25px 0 0;
+  display:flex;
+  padding:25px;
+  gap:20px;
+  position:relative;
+  z-index:1;
+}
+
+.left{
+  flex:1.2;
+  overflow:auto;
+}
+
+.right{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+/* TEXT */
+.project-title{
+  font-size:20px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.desc{
+  font-size:13px;
+  line-height:1.6;
+  margin-bottom:12px;
+}
+
+.keywords{
+  font-size:12px;
+  color:#ff2ea6;
+}
+
+/* IMAGE ONLY (video removed) */
+img{
+  width:100%;
+  height:100%;
+  object-fit:contain; /* keeps full image visible */
+  border-radius:12px;
+  display:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<!-- ================= CAROUSEL ================= -->
+<div class="top">
+<div class="carousel">
+
+  <div class="card" onclick="show('iconicity_brain')">
+    <div class="title">Iconicity in Natural Speech</div>
+    <div class="subtitle">Decoding Speech + Brain</div>
+    <div style="color:#ff2ea6;font-size:11px;margin-top:4px;">★ MOST RECENT</div>
+  </div>
+  
+  <div class="card" onclick="show('llm')">
+    <div class="title">LLM vs Brain</div>
+    <div class="subtitle">Neural Network, Language + AI</div>
+    <div style="color:#ff2ea6;font-size:11px;margin-top:4px;">● ONGOING</div>
+  </div>  
+
+  <div class="card" onclick="show('air')">
+    <div class="title">Air Piano</div>
+    <div class="subtitle">Computer Vision + Audio</div>
+  </div>
+
+  <div class="card" onclick="show('tic')">
+    <div class="title">Bayesian Tic Tac Toe</div>
+    <div class="subtitle">ML + Decision Systems</div>
+  </div>
+
+  <div class="card" onclick="show('schelling')">
+    <div class="title">Schelling Model</div>
+    <div class="subtitle">Agent Simulation</div>
+  </div>
+
+  <div class="card" onclick="show('preterm')">
+    <div class="title">Preterm Project</div>
+    <div class="subtitle">Neurodevelopmental </div>
+  </div>
+
+  <div class="card" onclick="show('ir')">
+    <div class="title">IR Ring Interface</div>
+    <div class="subtitle">Wearable Sensing</div>
+  </div> 
+
+  <div class="card" onclick="show('cricket')">
+    <div class="title">HOWZATTT!!</div>
+    <div class="subtitle">Bayesian Sports Modelling</div>
+  </div>
+  
+  <div class="card" onclick="show('tactile')">
+    <div class="title">Tactile Neuron </div>
+    <div class="subtitle">Model + Neuroscience</div>
+  </div> 
+  
+  <div class="card" onclick="show('neuro')">
+    <div class="title">Neurolinguistic Study</div>
+    <div class="subtitle">Language + Brain</div>
+  </div>
+  
+  <div class="card" onclick="show('mri')">
+    <div class="title">sMRI Analysis</div>
+    <div class="subtitle">Processing Pipeline</div>
+  </div>
+  
+  <div class="card" onclick="show('dnf')">
+    <div class="title">Dynamic Neural Field</div>
+    <div class="subtitle">Neural Population Modelling</div>
+  </div>
+  
+  <div class="card" onclick="show('fmri')">
+    <div class="title">fMRI Replication</div>
+    <div class="subtitle">Stop-Signal Task</div>
+  </div>
+  
+   <div class="card" onclick="show('ML_MEG')">
+      <div class="title">MEG Classification</div>
+      <div class="subtitle">ML + Gestational Factors</div>
+    </div> 
+
+  <div class="card" onclick="show('ML_EEG')">
+      <div class="title">EEG Classification</div>
+      <div class="subtitle">ML + Imagery motor</div>
+  </div>    
+    
+
+
+
+  
+
+  
+
+
+
+
+
+</div>
+</div>
+
+<!-- ================= DETAILS ================= -->
+<div class="bottom">
+
+  <div class="left">
+    <div class="project-title" id="title">Select a Project</div>
+    <div class="desc" id="desc"></div>
+    <div class="keywords" id="key"></div>
+  </div>
+
+  <div class="right">
+
+    <!-- ONLY IMAGE NOW -->
+    <img id="img" src="example.png">
+
+  </div>
+
+</div>
+
+<script>
+
+/* ================= PROJECTS ================= */
+
+function show(id){
+
+  let img = document.getElementById("img");
+
+  img.style.display="none";
+
+  /* ================= AIR PIANO ================= */
+  if(id==="air"){
+
+    img.style.display="block";
+    img.src="example.png"; // placeholder image
+
+    document.getElementById("title").innerHTML =
+      "Air Piano: Vision-Based Musical Interaction System";
+
+    document.getElementById("desc").innerHTML =
+
+`The Air Piano system is a real-time human–computer interaction framework that leverages computer vision for gesture-driven musical synthesis. 
+Hand landmarks are extracted using MediaPipe and mapped to a virtual piano keyboard space. 
+Finger position dynamics are translated into discrete note activation events with minimal latency.
+
+The system integrates OpenCV-based frame processing with audio synthesis pipelines using Pygame. 
+This enables touchless musical control, allowing intuitive interaction without physical instruments.`;
+
+    document.getElementById("key").innerHTML =
+      "Keywords: Computer Vision, MediaPipe, Human–Computer Interaction, Audio Signal Processing";
+
+  }
+
+  /* ================= TIC TAC TOE ================= */
+  else if(id==="tic"){
+
+    img.style.display="block";
+    img.src="example.png";
+
+    document.getElementById("title").innerHTML =
+      "Bayesian Tic Tac Toe: Adaptive Game Intelligence Model";
+
+    document.getElementById("desc").innerHTML =
+
+`This project implements a probabilistic learning framework for adversarial gameplay using Bayesian inference principles. 
+The model updates state-action probabilities based on observed opponent behavior across multiple iterations. 
+This enables adaptive strategy refinement beyond static rule-based AI systems.
+
+The system combines heuristic decision rules with reinforcement-based frequency updates. 
+It demonstrates convergence toward optimal policy selection under repeated exposure to human play patterns.`;
+
+    document.getElementById("key").innerHTML =
+      "Keywords: Bayesian Inference, Reinforcement Learning, Game Theory, Adaptive Systems";
+
+  }
+
+  /* ================= SCHELLING ================= */
+  else if(id==="schelling"){
+
+    img.style.display="block";
+    img.src="example.png";
+
+    document.getElementById("title").innerHTML =
+      "Schelling Segregation Model: Emergent Spatial Dynamics";
+
+    document.getElementById("desc").innerHTML =
+
+`The Schelling model simulates emergent segregation patterns arising from local agent preferences. 
+Each agent evaluates neighborhood similarity thresholds and relocates based on satisfaction criteria. 
+Despite minimal individual bias, the system evolves into highly structured macro-scale segregation.
+
+The implementation highlights nonlinear emergent behavior in complex adaptive systems. 
+It serves as a computational demonstration of how local decision rules influence global spatial organization.`;
+
+    document.getElementById("key").innerHTML =
+      "Keywords: Agent-Based Modeling, Emergence, Complex Systems, Social Dynamics";
+
+  }
+
+/* ================= preterm ================= */
+  else if(id==="preterm"){
+
+    img.style.display="block";
+    img.src="example.png";
+
+    document.getElementById("title").innerHTML =
+      "Preterm Birth and Neurodevelopmental Trajectories: A Computational Analysis";
+
+    document.getElementById("desc").innerHTML =
+
+`This project investigates the neurodevelopmental consequences of preterm birth through computational and statistical modelling frameworks. 
+The study focuses on early-life deviations in brain maturation patterns, particularly in cortical and subcortical structures, using longitudinal data analysis. 
+Emphasis is placed on identifying biomarkers associated with atypical developmental trajectories.
+
+Methodologically, the work integrates neuroimaging-derived metrics with predictive modelling approaches to quantify deviations from normative growth patterns. 
+Advanced statistical inference techniques are employed to evaluate structural and functional disparities across developmental stages. 
+The results provide insight into early diagnostic indicators and potential intervention targets in neonatal neuroscience.`; 
+
+    document.getElementById("key").innerHTML =
+      "Keywords: Neurodevelopment, Preterm Birth, Computational Neuroscience, Statistical Modelling, Neuroimaging";
+
+  }
+
+/* ================= IR RING ================= */
+
+  else if(id==="ir"){
+
+    img.style.display="block";
+    img.src="example.png";
+
+    document.getElementById("title").innerHTML =
+      "Infrared Ring Interface: Wearable Interaction and Sensing System";
+
+    document.getElementById("desc").innerHTML =
+
+`The IR Ring project presents a wearable sensing interface designed to capture fine-grained hand gestures using infrared-based proximity detection. 
+The system enables intuitive human–computer interaction through continuous tracking of finger movements and spatial positioning. 
+Its compact form factor allows seamless integration into everyday environments.
+
+The methodology involves signal acquisition through IR sensors followed by preprocessing and feature extraction to classify gesture patterns. 
+Embedded systems and real-time processing pipelines are employed to ensure low-latency response. 
+The system demonstrates potential applications in assistive technology, augmented interaction systems, and gesture-based control interfaces.`; 
+    document.getElementById("key").innerHTML =
+      "Keywords: Wearable Computing, Infrared Sensing, Human–Computer Interaction, Embedded Systems, Gesture Recognition";
+  }
+
+/* ================= CRICKET ================= */
+  else if(id==="cricket"){
+
+    img.style.display="block";
+    img.src="example.png";
+
+    document.getElementById("title").innerHTML =
+      "HOWZATTT!! Bayesian Modelling of Umpire Decision-Making in Cricket";
+
+    document.getElementById("desc").innerHTML =
+
+`This project models umpire decision-making in LBW (Leg Before Wicket) scenarios using Bayesian inference principles. 
+The system simulates match conditions by incorporating contextual variables such as crowd influence, acoustic cues, player movement, and historical decision bias. 
+It evaluates how uncertainty and cognitive bias affect probabilistic judgment under dynamic conditions.
+
+The computational framework constructs prior, likelihood, and posterior distributions for each decision instance. 
+Simulated ball trajectories and stochastic behavioural factors are integrated to emulate real-world ambiguity in officiating. 
+Results demonstrate how cumulative bias and confidence adaptation influence long-term decision accuracy, offering insight into human perceptual decision systems.`; 
+
+    document.getElementById("key").innerHTML =
+      "Keywords: Bayesian Inference, Decision Modelling, Sports Analytics, Cognitive Bias, Probabilistic Systems";
+
+  }
+
+  
+/* ================= Tactile Neuron Research ================= */
+  else if(id==="tactile"){
+
+    img.style.display="block";
+    img.src="example.png";
+
+    document.getElementById("title").innerHTML =
+      "Tactile Neuron Dynamics: Encoding Shape, Frequency, and Pressure in Somatosensory Systems";
+
+    document.getElementById("desc").innerHTML =
+
+`This research investigates the functional roles of tactile mechanoreceptors (SA1, RA, and PC neurons) in encoding somatosensory information. 
+The study examines neuronal firing patterns in response to variations in stimulus shape, vibrational frequency, and applied pressure. 
+It aims to characterize how distinct receptor types contribute to perceptual encoding of touch.
+
+The methodology employs computational simulations of afferent neuron distributions with stochastic spatial modelling. 
+Stimulus-response relationships are analysed using firing rate plots and raster visualisations across varying frequencies and pressure conditions. 
+Results indicate that SA1 neurons are highly sensitive to shape, whereas RA and PC neurons predominantly encode dynamic and high-frequency stimuli, highlighting their complementary roles in tactile perception.`; 
+
+
+    document.getElementById("key").innerHTML =
+      "Keywords: Computational Neuroscience, Tactile Perception, Mechanoreceptors, Neural Modelling, Sensory Systems";
+
+  }
+
+/* ================= Neurolinguistic MEG Study ================= */
+  else if(id==="neuro"){
+
+    img.style.display="block";
+    img.src="example.png";
+
+    document.getElementById("title").innerHTML =
+      "Neural Encoding of Metaphor and Iconicity: A MEG-Based Computational Study";
+
+    document.getElementById("desc").innerHTML =
+
+`This study investigates the neural mechanisms underlying metaphor comprehension using magnetoencephalography (MEG) and advanced signal processing pipelines. 
+A structured preprocessing framework was implemented using MNE-Python, incorporating Maxwell filtering, ICA-based artefact rejection, band-pass filtering, and precise epoching to isolate stimulus-locked neural responses. 
+The experimental paradigm, developed in PsychoPy, presents both same-sensory and cross-sensory metaphors to examine modality-specific linguistic processing.
+
+Time–frequency analyses were conducted on cortical regions such as Broca’s area to quantify oscillatory dynamics associated with semantic integration. 
+The results provide insight into how the brain differentially processes metaphor types, highlighting distributed neural representations across sensory modalities and supporting the role of embodied cognition in language comprehension.`; 
+
+
+    document.getElementById("key").innerHTML =
+      "Keywords: MEG, MNE-Python, Neurolinguistics, Time-Frequency Analysis, semantics";
+
+  }
+
+/* ================= MRI Processing ================= */
+  else if(id==="mri"){
+
+    img.style.display="block";
+    img.src="example.png";
+
+    document.getElementById("title").innerHTML =
+      "Structural MRI Preprocessing and Cortical Reconstruction Pipeline";
+
+    document.getElementById("desc").innerHTML =
+
+`This project implements a full-stack structural MRI preprocessing pipeline using the FreeSurfer neuroimaging suite. 
+The workflow includes intensity normalization, skull stripping, Talairach transformation, and automated segmentation of cortical and subcortical structures. 
+High-resolution cortical surface reconstruction and parcellation are performed to derive anatomically meaningful brain regions.
+
+The pipeline is optimized for high-performance computing environments, enabling efficient processing of large neuroimaging datasets. 
+Cortical thickness estimation and surface registration further allow for group-level comparisons, supporting advanced neuroanatomical and clinical research applications.`; 
+
+
+    document.getElementById("key").innerHTML =
+      "Keywords: MRI, FreeSurfer, Neuroimaging, Brain Segmentation, Cortical Reconstruction";
+
+  }
+
+/* ================= Dynamic Neural Field ================= */
+  else if(id==="dnf"){
+
+    img.style.display="block";
+    img.src="example.png";
+
+    document.getElementById("title").innerHTML =
+      "Dynamic Neural Field Modelling: Spatiotemporal Neural Population Dynamics";
+
+    document.getElementById("desc").innerHTML =
+
+`This project models neural population dynamics using a Dynamic Neural Field (DNF) framework to simulate spatiotemporal activity patterns. 
+The system integrates excitatory and inhibitory interactions through a parametrized weight matrix governed by amplitude, inhibition strength, and spatial spread. 
+A nonlinear sigmoid activation function captures threshold-dependent neural responses under time-varying external input.
+
+Systematic parameter tuning reveals distinct behavioural regimes, including growing activation, decaying responses, and persistent memory states. 
+These dynamics provide computational insight into how neural populations encode, sustain, and regulate information, reflecting mechanisms underlying perception and working memory.`; 
+
+
+
+    document.getElementById("key").innerHTML =
+      "Keywords: Computational Neuroscience, Dynamic Neural Fields, Neural Modelling, MATLAB, Spatiotemporal Dynamics";
+
+  }  
+
+
+/* ================= fMRI Replication Study of Self-Control Mechanisms (Stop-Signal Task) ================= */
+  else if(id==="fmri"){
+
+    img.style.display="block";
+    img.src="example.png";
+
+    document.getElementById("title").innerHTML =
+      "fMRI Replication Study of Self-Control Mechanisms, Stop-Signal Task";
+
+
+    document.getElementById("desc").innerHTML =
+
+`This project presents a rigorous replication of the Stop-Signal Task fMRI paradigm investigating the neural basis of inhibitory control and self-regulation. Using a publicly available dataset of 24 participants, the study reconstructs a full neuroimaging analysis pipeline implemented in FSL (FEAT), including preprocessing, first-level, second-level, and group-level mixed-effects modelling.
+
+The preprocessing pipeline incorporates BET-based skull stripping, motion correction (MCFLIRT), Gaussian smoothing (FWHM = 5 mm), and high-pass temporal filtering (cutoff = 66 s). Event-related regressors (Go/Stop conditions) were convolved with a double-gamma HRF, while nuisance regressors (motion + derivatives) were included to improve signal specificity.
+
+A key methodological contribution lies in systematically evaluating preprocessing choices (e.g., motion correction strategies, brain extraction thresholds) and demonstrating their impact on activation reliability. Registration was performed via a three-stage pipeline (EPI → T2 → T1 → MNI space) using FLIRT and FNIRT, ensuring accurate spatial normalization.
+Group-level inference employed mixed-effects modelling (FLAME 1) with Gaussian Random Field theory (Z > 2.3, p < 0.05) for cluster correction. The replication successfully reproduced the majority of activation clusters reported in the original study, validating both methodological fidelity and robustness of inhibitory control networks.
+
+This work highlights the importance of reproducibility, parameter sensitivity, and statistical rigor in neuroimaging pipelines, providing a computationally transparent framework for fMRI replication studies.`; 
+
+    document.getElementById("key").innerHTML =
+      "Keywords: fMRI, Stop-Signal Task, inhibitory control, FSL, FEAT, BET, MCFLIRT, FNIRT, FLAME, GLM, HRF modelling, brain extraction, motion correction, neuroimaging replication, Gaussian Random Field, mixed-effects analysis";
+  }  
+
+
+/* ================= fMachine Learning Classification of MEG Signals Based on Gestational Factors ================= */
+  else if(id==="ML_MEG"){
+
+    img.style.display="block";
+    img.src="example.png";
+
+    document.getElementById("title").innerHTML =
+      "Machine Learning Classification of MEG Signals Based on Gestational Factors";
+
+
+    document.getElementById("desc").innerHTML =
+
+`This project applies supervised machine learning to classify neonatal MEG signals based on gestational age, birth weight, and gender, using motor cortex (M1) oscillatory features. Neural activity was characterized using motor-induced beta and gamma frequency bands, capturing developmental differences in cortical dynamics.
+
+Feature-driven classification models were implemented using Fine K-Nearest Neighbors (KNN) and decision tree classifiers, evaluated via cross-validation. The models demonstrate strong predictive capability in distinguishing preterm vs full-term infants, as well as stratifying subjects across gestational weight categories and biological sex.
+
+Performance evaluation was conducted using accuracy, sensitivity, specificity, and ROC curve analysis, highlighting the discriminative power of oscillatory biomarkers. Results indicate that developmental variations in neural oscillations are reliably encoded in MEG signals and can be leveraged for classification tasks.
+
+This study provides a computational framework linking neurophysiological signal features to developmental biomarkers, with potential applications in early diagnosis and neurodevelopmental monitoring.`; 
+
+    document.getElementById("key").innerHTML =
+      "Keywords: MEG, machine learning, KNN, decision tree, gestational age, neonatal brain, beta oscillations, gamma oscillations, classification, ROC curves, sensitivity, specificity, neurodevelopment, M1 cortex";
+  }  
+
+
+/* ================= EEG Signal Classification Using Wavelet Transform and Multifractal================= */
+  else if(id==="ML_EEG"){
+
+    img.style.display="block";
+    img.src="example.png";
+
+    document.getElementById("title").innerHTML =
+      "EEG Signal Classification Using Wavelet Transform and Multifractal";
+
+
+    document.getElementById("desc").innerHTML =
+
+`This project investigates EEG signal classification for motor imagery tasks 
+    (right-hand vs left-hand movement) using advanced signal processing and 
+    non-linear analysis techniques. Unlike classical methods, this study leverages Discrete Wavelet Transform (DWT) and multifractal analysis to capture complex scaling behaviour in neural signals.
+    Preprocessed datasets (EC1 and EO1) from 13 scalp electrodes were analysed 
+    across time, frequency, and time-frequency domains. Multifractal and scaling 
+    exponent features were extracted for each electrode, resulting in high-dimensional 
+    feature matrices (468 × 3574). These features were combined into a unified dataset 
+    for classification. Feature extraction was performed in MATLAB, followed by classification using 
+    machine learning models within the Classification Learner framework. The study 
+    demonstrates how non-linear dynamics and fractal properties of EEG signals can 
+    enhance discrimination between motor imagery conditions.`; 
+
+
+    document.getElementById("key").innerHTML =
+      "Keywords: Discrete Wavelet Transform (DWT), Multifractal Analysis, Scaling Exponent Estimation, Time–Frequency Signal Analysis, Machine Learning Classification (KNN-based models)";
+  } 
+
+
+
+
+
+
+
+/* ================= ICONICITY ================= */
+  else if(id==="iconicity_brain"){
+
+    img.style.display="block";
+    img.src="example.png";
+
+    document.getElementById("title").innerHTML =
+      "Neural Tracking of Iconicity in Continuous Natural Speech";
+
+
+    document.getElementById("desc").innerHTML =
+
+`This research investigates how the human brain encodes iconicity during natural, continuous speech using MEG and multivariate temporal response function (mTRF) modelling. 
+Unlike prior studies constrained to isolated or highly iconic stimuli, this work examines real-world language processing using TED-style narratives, integrating word-level iconicity ratings aligned with continuous speech signals.
+
+The computational framework jointly models multiple linguistic and acoustic features, including iconicity, sensorimotor norms, and speech envelope dynamics. 
+By controlling for correlated features within a unified encoding–decoding framework, the study isolates the unique neural contribution of iconicity, offering novel insights into language processing beyond early developmental stages.`; 
+
+
+
+    document.getElementById("key").innerHTML =
+      "Keywords: MEG, multivariate temporal response function, Iconicity, Speech Processing, Encoding + Decoding"; 
+  }  
+
+/* ================= LLM ================= */
+  else if(id==="llm"){
+
+    img.style.display="block";
+    img.src="example.png";
+
+    document.getElementById("title").innerHTML =
+      "Comparative Modelling of Iconicity Processing in LLMs and the Human Brain";
+
+
+    document.getElementById("desc").innerHTML =
+
+`This ongoing project investigates whether large language models (LLMs) encode iconicity in a manner analogous to human neural processing. 
+Using transformer-based architectures such as GPT-4, SBERT, and advanced embedding models, the study extracts high-dimensional semantic representations of language and compares them with brain activity patterns obtained from MEG recordings.
+
+The objective is to bridge artificial and biological intelligence by analysing whether neural representations of iconicity emerge implicitly in deep learning systems. 
+By aligning LLM embeddings with neural encoding frameworks, this work explores parallels in distributed representation, temporal processing, and feature abstraction between artificial neural networks and the human brain.`; 
+
+    document.getElementById("key").innerHTML =
+      "Keywords: Large Language Models, GPT-4, SBERT, Neural Encoding, Brain–AI Alignment";
+  }  
+
+
+
+
+
+
+
+
+}
+
+</script>
+
+</body>
+</html>

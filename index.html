@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Shrisha Sathishkumar</title>
+
+<style>
+/* ================= GLOBAL ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Courier New', monospace;
+}
+
+html,body{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+
+/* ================= BACKGROUND ================= */
+.bg{
+  position:fixed;
+  inset:0;
+  background:url("background.png") center/cover no-repeat;
+  filter:brightness(1.2) blur(1px) grayscale(0.1);
+  z-index:-2;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(255,255,255,0.25);
+  z-index:-1;
+}
+
+/* ================= MAIN CARD ================= */
+.card{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:85%;
+  height:85%;
+  background:rgba(255,255,255,0.88);
+  border-radius:25px;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 10px 40px rgba(0,0,0,0.2);
+  overflow:hidden;
+}
+
+/* ================= HEADER ================= */
+.header{
+  text-align:center;
+  font-size:64px;
+  font-weight:bold;
+  padding:18px;
+  border-bottom:1px solid rgba(0,0,0,0.1);
+  letter-spacing:4px;
+}
+
+/* ================= BODY (3 COLUMNS) ================= */
+.body{
+  flex:1;
+  display:flex;
+}
+
+/* ================= LEFT SIDEBAR ================= */
+.left{
+  width:20%;
+  background:rgba(240,240,240,0.6);
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+/* NAV LINKS */
+.left a{
+  font-size:24px;
+  font-weight:bold;
+  text-decoration:none;
+  color:#222;
+  padding:10px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.left a:hover{
+  background:rgba(0,0,0,0.1);
+}
+
+/* ACTIVE TAB */
+.left a.active{
+  background:rgba(255,20,147,0.2);
+  color:#ff2ea6;
+  border:1px solid rgba(255,20,147,0.4);
+  box-shadow:0 0 10px rgba(255,20,147,0.4);
+}
+
+/* HEART BOX */
+.heartBox{
+  margin-top:auto;
+  height:170px;
+  border-radius:15px;
+  background:rgba(255,255,255,0.4);
+  overflow:hidden;
+}
+/* ================= RIGHT moving link ================= */
+.featured-project {
+  background: linear-gradient(135deg, #ffffff, #f4f6ff);
+  border-left: 4px solid #ff2ea6;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  font-family: 'Segoe UI', sans-serif;
+  margin-bottom: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* small badge */
+.featured-project .tag {
+  flex:0 0 auto;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff2ea6;
+  color: white;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+/* main link */
+.featured-link {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff2ea6;
+  text-decoration: none;
+  animation: floatPulse 2.5s ease-in-out infinite;
+}
+
+.featured-link b {
+  color: #ff2ea6;
+}
+
+.featured-link:hover {
+  text-decoration: underline;
+}
+
+/* small helper text */
+.subtext {
+  font-size: 12px;
+  color: #7f8c8d;
+  margin-top: 6px;
+}
+
+/* subtle movement */
+@keyframes floatPulse {
+  0%   { transform: translateY(0px); opacity: 0.85; }
+  50%  { transform: translateY(-3px); opacity: 1; }
+  100% { transform: translateY(0px); opacity: 0.85; }
+}
+
+/* ================= MIDDLE ================= */
+.middle{
+  flex:2;
+  padding:25px;
+  display:flex;
+  flex-direction:column;
+}
+
+.content{
+  flex:1;
+  overflow:auto;
+  font-size:16px;
+  line-height:1.6;
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  padding:10px;
+  border-top:1px solid rgba(0,0,0,0.1);
+  font-size:14px;
+}
+
+/* ================= RIGHT ================= */
+.right{
+  width:25%;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  padding:15px;
+}
+
+.box{
+ 
+  background:rgba(255,255,255,0.6);
+  border-radius:15px;
+  padding:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  font-size:13px;
+}
+
+.skillsBox{
+  flex:1;
+  overflow:hidden;
+  font-size:12px;
+  line-height:1.4;
+}
+
+.skill-section{
+  margin-bottom:10px;
+  padding-bottom:8px;
+  border-bottom:1px dashed rgba(255, 20, 147, 0.25);
+}
+
+.skill-section b{
+  color:#ff2ea6;
+  font-size:13px;
+}
+
+
+
+/* ================= CANVAS ================= */
+canvas{
+  width:100%;
+  height:100%;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="overlay"></div>
+
+<div class="card">
+
+  <!-- HEADER -->
+  <div class="header">
+    SHRISHA SATHISHKUMAR
+  </div>
+
+  <div class="body">
+
+    <!-- LEFT -->
+    <div class="left">
+      <a href="projects.html">Projects</a>
+      <a href="education.html">Education</a>
+      <a href="skills.html">Skills</a>
+      <a href="work.html">Work Experience</a>
+      <a href="https://github.com/shrishasat">GitHub</a>
+      <a href="https://scholar.google.co.uk/citations?user=KxEHmOIAAAAJ&hl=en">GScholar</a>
+      <a href="https://www.linkedin.com/in/shrishasathishkumar/">LinkedIn</a>
+
+      <!-- HEART -->
+      <div class="heartBox">
+        <canvas id="heartCanvas"></canvas>
+      </div>
+    </div>
+
+    <!-- MIDDLE -->
+    <div class="middle">
+
+      <div class="content">
+        <h2>Hello world!</h2>
+        <br>
+
+        <p>I’m a Computational Neuroscience researcher with a background in Machine Learning and Biomedical Engineering. My work sits at the exciting intersection of brains, code, and curiosity — from building medical devices to modelling how the brain thinks, learns, and speaks.</p>
+
+        <br>
+
+        <p>Right now, I’m especially focused on decoding brain activity from language and vice versa using Large Language Models (LLMs) and brain data.</p>
+
+        <br>
+
+        <p>Outside of research, I’m deeply curious about bioastronautics (yes, team space), and when I’m not thinking about neurons or neural networks, you’ll probably find me passionately debating cricket.</p>
+
+        <br><br>
+
+        <p>Thanks for stopping by — this space shares my work, ideas, and experiments exploring the brain and beyond.</p>
+      </div>
+
+      <div class="footer">
+        Training models, decoding brains, and occasionally confusing both.
+      </div>
+
+    </div>
+
+
+
+    <!-- RIGHT -->
+    
+    <div class="right">
+
+      <!-- FEATURED PROJECT BOX -->
+      <div class="box featured-project">
+
+        <div class="tag">Featured</div>
+        
+        <a href="projects.html" class="featured-link">
+          <br><br>
+          Latest Project → LLM vs Brain Decoding
+        </a>
+
+        <div class="subtext">
+          Click to explore full research projects
+        </div>
+
+      </div>
+
+      <!-- SKILLS BOX -->
+      <div class="box skillsBox">
+        <b>Skills</b>
+        <br><br>
+    
+        <div class="skill-section">
+          <b>Programming Languages:</b>
+          <p>Python, C, MATLAB</p>
+        </div>
+
+        <div class="skill-section">
+          <b>Software & Tools:</b>
+          <p>LabVIEW, Fusion 360, VS Studio, Unity, Jupyter, HTML</p>
+        </div>
+
+        <div class="skill-section">
+          <b>Machine Learning:</b>
+          <p>Keras, SPSS, CV2, MediaPipe, Matplotlib, PyTorch-like tools, spaCy, PyQt, NumPy, PyGame, SciPy, Scikit-learn</p>
+        </div>
+
+        <div class="skill-section">
+          <b>Neuroimaging:</b>
+          <p>MNE, BioPython, Brainstorm, EEGLAB, FreeSurfer, FSL, FSLeyes, Homer2</p>
+        </div>
+
+        <div class="skill-section">
+          <b>LLMs:</b>
+          <p>GloVe, GPT-2, GPT-4o-mini, BERT, SBERT, Text Embedding 3 Large</p>
+        </div>
+
+        <div class="skill-section">
+          <b>Hardware:</b>
+          <p>Arduino IDE</p>
+        </div>
+
+        <div class="skill-section">
+          <b>Experimental Tools:</b>
+          <p>OpenSesame, PsychoPy, BlueBear (Linux)</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* ================= ACTIVE TAB ================= */
+const links = document.querySelectorAll(".left a");
+
+links.forEach(link=>{
+  link.addEventListener("click",()=>{
+    links.forEach(l=>l.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
+
+/* ================= HEART ANIMATION ================= */
+const canvas = document.getElementById("heartCanvas");
+const ctx = canvas.getContext("2d");
+
+function resize(){
+  canvas.width = canvas.clientWidth;
+  canvas.height = canvas.clientHeight;
+}
+window.addEventListener("resize",resize);
+resize();
+
+class Particle{
+  constructor(x,y){
+    this.x=x;
+    this.y=y;
+    this.baseX=x;
+    this.baseY=y;
+
+    this.size=Math.random()*2+1;
+    this.life=Math.random()*1.5;
+
+    this.color=`rgba(255,${Math.random()*100},${150+Math.random()*105},1)`;
+
+    let angle=Math.random()*Math.PI*2;
+    let speed=Math.random()*2;
+    this.vx=Math.cos(angle)*speed;
+    this.vy=Math.sin(angle)*speed;
+  }
+
+  update(dis){
+    if(dis){
+      this.x+=this.vx;
+      this.y+=this.vy;
+      this.life-=0.02;
+    }else{
+      this.x+=(this.baseX-this.x)*0.08;
+      this.y+=(this.baseY-this.y)*0.08;
+    }
+  }
+
+  draw(){
+    if(this.life>0){
+      ctx.beginPath();
+      ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+      ctx.fillStyle=this.color;
+      ctx.fill();
+    }
+  }
+}
+
+function heartPoints(scale){
+  let pts=[];
+  for(let i=0;i<360;i+=4){
+    let t=i*Math.PI/180;
+    let x=scale*16*Math.pow(Math.sin(t),3);
+    let y=-scale*(13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t));
+    pts.push([canvas.width/2+x,canvas.height/2+y]);
+  }
+  return pts;
+}
+
+let particles=[];
+let time=0;
+let beatTimer=0;
+
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  let beat=Math.sin(time);
+
+  /* 👇 SMALL HEART SIZE */
+  let scale=1.8+beat*0.6;
+
+  let dis=beat>0.9;
+
+  if(dis && beatTimer<=0){
+    particles=[];
+    let pts=heartPoints(scale);
+    pts.forEach(p=>{
+      for(let i=0;i<2;i++)particles.push(new Particle(p[0],p[1]));
+    });
+    beatTimer=20;
+  }
+
+  beatTimer--;
+
+  particles.forEach(p=>{p.update(dis);p.draw();});
+
+  time+=0.05;
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
+</body>
+</html>
