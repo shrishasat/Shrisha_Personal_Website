@@ -496,7 +496,7 @@ These dynamics provide computational insight into how neural populations encode,
 `This project presents a rigorous replication of the Stop-Signal Task fMRI paradigm investigating the neural basis of inhibitory control. Using a publicly available dataset of 24 participants, the study reconstructs a full neuroimaging analysis pipeline implemented in FSL (FEAT), including preprocessing, first-level, second-level, and group-level mixed-effects modelling.
 
 The preprocessing pipeline incorporates BET-based skull stripping, motion correction(MCFLIRT), Gaussian smoothing(FWHM = 5 mm), and HPF-temporal (cutoff = 66 s). Event-related regressors were convolved with a double-gamma HRF, while nuisance regressors (motion + derivatives) were included to improve signal specificity. Registration was performed via a three-stage pipeline (EPI → T2 → T1 → MNI space) using FLIRT and FNIRT, ensuring accurate spatial normalization.
-Group-level inference employed mixed-effects modelling (FLAME 1) with Gaussian Random Field theory (Z > 2.3, p < 0.05) for cluster correction. The replication successfully reproduced the majority of activation clusters reported in the original study.
+Group-level inference employed mixed-effects modelling (FLAME 1) with Gaussian Random Field theory (Z > 2.3, p < 0.05) for cluster correction. The replication successfully reproduced the majority of activation clusters reported in the original study.`;
 
     document.getElementById("key").innerHTML =
       "Keywords: fMRI, Stop-Signal Task, inhibitory control, FSL, FEAT, BET, MCFLIRT, FNIRT, FLAME, GLM, HRF modelling, brain extraction, motion correction, neuroimaging replication, Gaussian Random Field, mixed-effects analysis";
