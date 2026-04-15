@@ -242,7 +242,7 @@ function show(id){
   if(id==="air"){
 
     img.style.display="block";
-    img.src="example.png"; 
+    img.src="Airpiano.png"; 
 
     document.getElementById("title").innerHTML =
       "Air Piano: Vision-Based Musical Interaction System";
@@ -383,7 +383,7 @@ Results demonstrate how cumulative bias and confidence adaptation influence long
   else if(id==="tactile"){
 
     img.style.display="block";
-    img.src="example.png";
+    img.src="dnf.png";
 
     document.getElementById("title").innerHTML =
       "Tactile Neuron Dynamics: Encoding Shape, Frequency, and Pressure in Somatosensory Systems";
@@ -408,7 +408,7 @@ Results indicate that SA1 neurons are highly sensitive to shape, whereas RA and 
   else if(id==="neuro"){
 
     img.style.display="block";
-    img.src="example.png";
+    img.src="neuroling.png";
 
     document.getElementById("title").innerHTML =
       "Neural Encoding of Metaphor and Iconicity: A MEG-Based Computational Study";
@@ -432,7 +432,7 @@ The results provide insight into how the brain differentially processes metaphor
   else if(id==="mri"){
 
     img.style.display="block";
-    img.src="example.png";
+    img.src="project6.png";
 
     document.getElementById("title").innerHTML =
       "Structural MRI Preprocessing and Cortical Reconstruction Pipeline";
@@ -456,7 +456,7 @@ Cortical thickness estimation and surface registration further allow for group-l
   else if(id==="dnf"){
 
     img.style.display="block";
-    img.src="example.png";
+    img.src="dnf.png";
 
     document.getElementById("title").innerHTML =
       "Dynamic Neural Field Modelling: Spatiotemporal Neural Population Dynamics";
@@ -482,7 +482,7 @@ These dynamics provide computational insight into how neural populations encode,
   else if(id==="fmri"){
 
     img.style.display="block";
-    img.src="example.png";
+    img.src="fMRI.png";
 
     document.getElementById("title").innerHTML =
       "fMRI Replication Study of Self-Control Mechanisms, Stop-Signal Task";
@@ -490,14 +490,10 @@ These dynamics provide computational insight into how neural populations encode,
 
     document.getElementById("desc").innerHTML =
 
-`This project presents a rigorous replication of the Stop-Signal Task fMRI paradigm investigating the neural basis of inhibitory control and self-regulation. Using a publicly available dataset of 24 participants, the study reconstructs a full neuroimaging analysis pipeline implemented in FSL (FEAT), including preprocessing, first-level, second-level, and group-level mixed-effects modelling.
+`This project presents a rigorous replication of the Stop-Signal Task fMRI paradigm investigating the neural basis of inhibitory control. Using a publicly available dataset of 24 participants, the study reconstructs a full neuroimaging analysis pipeline implemented in FSL (FEAT), including preprocessing, first-level, second-level, and group-level mixed-effects modelling.
 
-The preprocessing pipeline incorporates BET-based skull stripping, motion correction (MCFLIRT), Gaussian smoothing (FWHM = 5 mm), and high-pass temporal filtering (cutoff = 66 s). Event-related regressors (Go/Stop conditions) were convolved with a double-gamma HRF, while nuisance regressors (motion + derivatives) were included to improve signal specificity.
-
-A key methodological contribution lies in systematically evaluating preprocessing choices (e.g., motion correction strategies, brain extraction thresholds) and demonstrating their impact on activation reliability. Registration was performed via a three-stage pipeline (EPI → T2 → T1 → MNI space) using FLIRT and FNIRT, ensuring accurate spatial normalization.
-Group-level inference employed mixed-effects modelling (FLAME 1) with Gaussian Random Field theory (Z > 2.3, p < 0.05) for cluster correction. The replication successfully reproduced the majority of activation clusters reported in the original study, validating both methodological fidelity and robustness of inhibitory control networks.
-
-This work highlights the importance of reproducibility, parameter sensitivity, and statistical rigor in neuroimaging pipelines, providing a computationally transparent framework for fMRI replication studies.`; 
+The preprocessing pipeline incorporates BET-based skull stripping, motion correction(MCFLIRT), Gaussian smoothing(FWHM = 5 mm), and HPF-temporal (cutoff = 66 s). Event-related regressors were convolved with a double-gamma HRF, while nuisance regressors (motion + derivatives) were included to improve signal specificity. Registration was performed via a three-stage pipeline (EPI → T2 → T1 → MNI space) using FLIRT and FNIRT, ensuring accurate spatial normalization.
+Group-level inference employed mixed-effects modelling (FLAME 1) with Gaussian Random Field theory (Z > 2.3, p < 0.05) for cluster correction. The replication successfully reproduced the majority of activation clusters reported in the original study.
 
     document.getElementById("key").innerHTML =
       "Keywords: fMRI, Stop-Signal Task, inhibitory control, FSL, FEAT, BET, MCFLIRT, FNIRT, FLAME, GLM, HRF modelling, brain extraction, motion correction, neuroimaging replication, Gaussian Random Field, mixed-effects analysis";
@@ -508,7 +504,7 @@ This work highlights the importance of reproducibility, parameter sensitivity, a
   else if(id==="ML_MEG"){
 
     img.style.display="block";
-    img.src="example.png";
+    img.src="preterm_ML.png";
 
     document.getElementById("title").innerHTML =
       "Machine Learning Classification of MEG Signals Based on Gestational Factors";
@@ -516,13 +512,10 @@ This work highlights the importance of reproducibility, parameter sensitivity, a
 
     document.getElementById("desc").innerHTML =
 
-`This project applies supervised machine learning to classify neonatal MEG signals based on gestational age, birth weight, and gender, using motor cortex (M1) oscillatory features. Neural activity was characterized using motor-induced beta and gamma frequency bands, capturing developmental differences in cortical dynamics.
+`This project applies supervised machine learning to classify MEG signals based on gestational age, birth weight, and gender, using motor cortex (M1) oscillatory features. Neural activity was characterized using motor-induced beta and gamma frequency bands, capturing developmental differences in cortical dynamics.
 
-Feature-driven classification models were implemented using Fine K-Nearest Neighbors (KNN) and decision tree classifiers, evaluated via cross-validation. The models demonstrate strong predictive capability in distinguishing preterm vs full-term infants, as well as stratifying subjects across gestational weight categories and biological sex.
-
-Performance evaluation was conducted using accuracy, sensitivity, specificity, and ROC curve analysis, highlighting the discriminative power of oscillatory biomarkers. Results indicate that developmental variations in neural oscillations are reliably encoded in MEG signals and can be leveraged for classification tasks.
-
-This study provides a computational framework linking neurophysiological signal features to developmental biomarkers, with potential applications in early diagnosis and neurodevelopmental monitoring.`; 
+Feature-driven classification models were implemented using Fine K-Nearest Neighbors (KNN) and decision tree classifiers, evaluated via cross-validation. 
+Performance evaluation was conducted using accuracy, sensitivity, specificity, and ROC curve analysis, highlighting the discriminative power of oscillatory biomarkers, with potential applications in early diagnosis and neurodevelopmental monitoring.`; 
 
     document.getElementById("key").innerHTML =
       "Keywords: MEG, machine learning, KNN, decision tree, gestational age, neonatal brain, beta oscillations, gamma oscillations, classification, ROC curves, sensitivity, specificity, neurodevelopment, M1 cortex";
@@ -568,7 +561,7 @@ This study provides a computational framework linking neurophysiological signal 
   else if(id==="iconicity_brain"){
 
     img.style.display="block";
-    img.src="example.png";
+    img.src="Iconicity.png";
 
     document.getElementById("title").innerHTML =
       "Neural Tracking of Iconicity in Continuous Natural Speech";
@@ -592,7 +585,7 @@ By controlling for correlated features within a unified encoding–decoding fram
   else if(id==="llm"){
 
     img.style.display="block";
-    img.src="example.png";
+    img.src="llm.png";
 
     document.getElementById("title").innerHTML =
       "Comparative Modelling of Iconicity Processing in LLMs and the Human Brain";
