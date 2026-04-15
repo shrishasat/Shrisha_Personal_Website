@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work Experience</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Courier New', monospace;
+  background:linear-gradient(135deg,#ffffff,#f7f7f7);
+  padding:40px;
+  opacity:0;
+  transform:translateY(10px);
+  filter:blur(6px);
+  animation:pageLoad 0.7s ease-out forwards;
+}
+
+@keyframes pageLoad{
+  to{
+    opacity:1;
+    transform:translateY(0);
+    filter:blur(0);
+  }
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+}
+
+h1{
+  text-align:center;
+  font-size:40px;
+  margin-bottom:50px;
+  letter-spacing:3px;
+}
+
+/* ================= TIMELINE ================= */
+.timeline{
+  position:relative;
+  margin-left:20px;
+  padding-left:40px;
+}
+
+/* vertical line */
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:10px;
+  top:0;
+  width:3px;
+  height:100%;
+  background:linear-gradient(#ff2ea6, #ff9ad6);
+}
+
+/* entry */
+.entry{
+  position:relative;
+  margin-bottom:40px;
+}
+
+/* dot */
+.entry::before{
+  content:'';
+  position:absolute;
+  left:-34px;
+  top:5px;
+  width:14px;
+  height:14px;
+  background:#ff2ea6;
+  border-radius:50%;
+  box-shadow:0 0 10px #ff2ea6;
+}
+
+/* card */
+.card{
+  background:rgba(255,255,255,0.85);
+  border-radius:18px;
+  padding:20px;
+  border:1px solid rgba(255,20,147,0.3);
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* role */
+.role{
+  font-weight:bold;
+  font-size:18px;
+}
+
+/* org */
+.org{
+  color:#444;
+  margin-top:4px;
+}
+
+/* date */
+.date{
+  font-size:13px;
+  color:#777;
+  margin-bottom:10px;
+}
+
+/* bullets */
+ul{
+  padding-left:20px;
+}
+
+li{
+  margin-bottom:8px;
+  line-height:1.6;
+}
+
+/* back */
+.back{
+  display:block;
+  text-align:center;
+  margin-top:40px;
+  font-weight:bold;
+  color:#ff2ea6;
+  text-decoration:none;
+}
+
+.back:hover{
+  transform:scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Work Experience</h1>
+
+<div class="timeline">
+
+<!-- ================= ARC ================= -->
+<div class="entry">
+<div class="card">
+
+<div class="role">Developer, Advanced Research Computing</div>
+<div class="org">Birmingham, UK</div>
+<div class="date">Sept 2025 – Present</div>
+
+<ul>
+<li>Initiated and led development of LLM-driven computational pipelines using Azure OpenAI (GPT-class models + embeddings) to analyse ~20M linguistic tokens for modelling neural–language representations.</li>
+
+<li>Designed neural encoding/decoding frameworks linking high-dimensional language features with brain activity, enabling speech decoding and reconstruction pipelines for BCI systems.</li>
+
+<li>Optimised large-scale AI inference pipelines in collaboration with HPC teams, reducing runtime by parallel jobs while ensuring reproducibility across multi-session neural datasets.</li>
+</ul>
+
+</div>
+</div>
+
+<!-- ================= CHBH ================= -->
+<div class="entry">
+<div class="card">
+
+<div class="role">Computational Neuroscience Researcher</div>
+<div class="org">Centre for Human Brain Health, University of Birmingham</div>
+<div class="date">July 2024 – Present</div>
+
+<ul>
+<li>Developing novel frameworks to interpret how Large Language Models (e.g., GPT-4-class systems) represent meaning across hidden layers, exploring “iconicity decoding” by comparing distributed semantic representations with human brain activity.</li>
+
+<li>Designed bidirectional decoding pipelines linking MEG neural signals with linguistic representations, including sensorimotor norm ratings, enabling mapping from brain → language and language → brain.</li>
+
+<li>Built neural encoding models integrating 54k+ human-rated linguistic features and scaling representations to ~1.9M tokens for modelling speech comprehension across 80+ participants.</li>
+
+<li>Developed full-stack MEG/fNIRS pipelines (SSS, ICA, TRF modelling), improving signal quality across subjects.</li>
+
+<li>Analysed motor cortex gamma-band activity in pediatric cohorts (n=37), identifying ~22% reductions in contralateral gamma power in preterm populations.</li>
+
+</ul>
+
+</div>
+</div>
+
+<!-- ================= MACHENN ================= -->
+<div class="entry">
+<div class="card">
+
+<div class="role">Research Engineer Intern</div>
+<div class="org">Machenn Innovations, Coimbatore, India</div>
+<div class="date">Jan 2022 – Apr 2022</div>
+
+<ul>
+<li>Developed IR-RING, a non-invasive infrared-based biomedical sensing system achieving ~90% accuracy in glucose monitoring, validated against clinical standards.</li>
+
+<li>Designed signal processing pipelines for physiological inference from electrical and IR sensor data for pre-prandial and post-prandial datasets.</li>
+
+<li>Published first-author IEEE work demonstrating full system feasibility (Sathishkumar et al., 2022).</li>
+</ul>
+
+</div>
+</div>
+
+<!-- ================= UTP ================= -->
+<div class="entry">
+<div class="card">
+
+<div class="role">Student Researcher</div>
+<div class="org">Universiti Teknologi Petronas, Malaysia</div>
+<div class="date">Nov 2020 – Jan 2021</div>
+
+<ul>
+<li>Improved EEG motor imagery classification accuracy using feature extraction, especially multifractals & continous wavelet transform and machine learning classifiers.</li>
+</ul>
+
+</div>
+</div>
+
+<!-- ================= KMCH ================= -->
+<div class="entry">
+<div class="card">
+
+<div class="role">Biomedical Engineer Intern</div>
+<div class="org">KMCH Hospitals, India</div>
+
+<ul>
+<li>Optimised medical device performance, handled calibration and troubleshooting, and ensured compliance with biomedical and e-waste regulations.</li>
+</ul>
+
+</div>
+</div>
+
+<!-- ================= EXTRA ================= -->
+<div class="entry">
+<div class="card">
+
+<div class="role">Leadership & Academic Roles</div>
+
+<ul>
+<li>Magazine Club Coordinator — initiated academic reading culture through curated scientific resources.</li>
+
+<li>MHRD Innovation Council Coordinator — organised innovation-driven events and research initiatives.</li>
+
+<li>Teaching Assistant — conducted peer teaching in DSP, communication systems, and physics while supporting research.</li>
+
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<a class="back" href="index.html">← Back to Home</a>
+
+</div>
+
+<script>
+document.querySelectorAll("a").forEach(link=>{
+  link.addEventListener("click", function(e){
+    const url=this.href;
+    if(url.includes("#")) return;
+
+    e.preventDefault();
+    document.body.style.opacity="0";
+    document.body.style.transform="translateY(-10px)";
+    document.body.style.filter="blur(8px)";
+
+    setTimeout(()=>window.location.href=url,400);
+  });
+});
+</script>
+
+</body>
+</html>

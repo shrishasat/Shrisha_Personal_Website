@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills</title>
+
+<style>
+/* ================= GLOBAL ================= */
+body{
+  margin:0;
+  font-family:'Courier New', monospace;
+  background:linear-gradient(135deg,#ffffff,#f7f7f7);
+  padding:40px;
+  opacity:0;
+  transform:translateY(10px);
+  filter:blur(6px);
+  animation:pageLoad 0.7s ease-out forwards;
+}
+
+@keyframes pageLoad{
+  to{
+    opacity:1;
+    transform:translateY(0);
+    filter:blur(0);
+  }
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+}
+
+/* TITLE */
+h1{
+  text-align:center;
+  font-size:40px;
+  letter-spacing:3px;
+  margin-bottom:40px;
+}
+
+/* SECTION CARD */
+.section{
+  background:rgba(255,255,255,0.85);
+  border-radius:20px;
+  padding:25px;
+  margin-bottom:25px;
+  border:1px solid rgba(255,20,147,0.3);
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* SECTION TITLE */
+.section-title{
+  font-size:20px;
+  font-weight:bold;
+  color:#ff2ea6;
+  margin-bottom:10px;
+}
+
+/* TEXT */
+.section p{
+  font-size:15px;
+  line-height:1.6;
+  color:#222;
+}
+
+/* LIST STYLE */
+ul{
+  padding-left:20px;
+}
+
+li{
+  margin-bottom:6px;
+}
+
+/* BACK BUTTON */
+.back{
+  display:block;
+  text-align:center;
+  margin-top:30px;
+  font-size:16px;
+  text-decoration:none;
+  color:#ff2ea6;
+  font-weight:bold;
+}
+
+.back:hover{
+  transform:scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Skills & Experience</h1>
+
+<!-- ================= COURSES ================= -->
+<div class="section">
+  <div class="section-title">Relevant Courses</div>
+  <p>
+    Engineering Mathematics, Engineering Graphics, Digital Time Signal & Image Processing, Engineering Physics,
+    Biocontrol Systems, Biomechanics, Research Proposal Writing, Cognitive Neuroscience, Computational Methods,
+    Mind Brain & Models, Circuit Analysis, Sensors & Measurements, Signals & Systems
+  </p>
+</div>
+
+<!-- ================= LAB EXPERIENCE ================= -->
+<div class="section">
+  <div class="section-title">Laboratory Experience</div>
+  <ul>
+    <li>Human Physiology Lab</li>
+    <li>Problem Solving & Python Programming Lab</li>
+    <li>Engineering Practices Lab</li>
+    <li>Integrated Circuits Lab</li>
+    <li>Engineering Physics & Chemistry Lab</li>
+    <li>Biomedical Instrumentation Lab</li>
+    <li>Python Programming Lab</li>
+    <li>Microprocessor & Microcontroller Lab</li>
+    <li>Devices & Circuits Lab</li>
+    <li>Cognitive Neuroscience Lab</li>
+    <li>Hospital Training</li>
+    <li>Interpersonal Skills Training</li>
+  </ul>
+</div>
+
+<!-- ================= CPD ================= -->
+<div class="section">
+  <div class="section-title">CPD Courses</div>
+  <ul>
+    <li>Good Clinical Practice Certification (NIHR)</li>
+    <li>Intellectual Property & Commercialization</li>
+    <li>Insights into Translational Medicine</li>
+  </ul>
+</div>
+
+<!-- ================= ASTROBIOLOGY ================= -->
+<div class="section">
+  <div class="section-title">Astrobiology & Space Courses</div>
+  <p>
+    Astronomy, Astrobiology, Space Medicine, Radio Signal Classification & Space Shuttle Exploration
+    (University of Edinburgh, MIT, Duke University)
+  </p>
+</div>
+
+<!-- ================= WORKSHOPS ================= -->
+<div class="section">
+  <div class="section-title">Workshops & Specialized Training</div>
+  <p>
+    Synergising Human Brain and Artificial Neural Networks — Workshops on MEG, EEG, and Brain-Computer Interfaces (ANT Neuro)
+  </p>
+</div>
+
+<!-- ================= AWARDS ================= -->
+<div class="section">
+  <div class="section-title">Awards & Achievements</div>
+  <ul>
+    <li>U21 Global Citizenship Micro-credential — Addressing UN SDG goals</li>
+    <li>University of Birmingham Global Masters Scholarship — Academic excellence</li>
+    <li>Best Outgoing Student of the Year — Excellence in academics, research, leadership & sports</li>
+    <li>Student of the Year — Outstanding academic and extracurricular performance</li>
+    <li>Class Topper Award — Highest academic performance</li>
+    <li>Deepam Award — Volunteering in rural education</li>
+  </ul>
+</div>
+
+<!-- ================= VOLUNTEERING ================= -->
+<div class="section">
+  <div class="section-title">Volunteering & Teaching</div>
+  <p>
+    Charity Volunteer — Math, English, and Tamil Tutor
+  </p>
+</div>
+
+<!-- ================= SOFT SKILLS ================= -->
+<div class="section">
+  <div class="section-title">Soft Skills</div>
+  <p>
+    Conference Hosting, Scientific Writing, Academic Mentorship, Grant Writing, Research Publication
+  </p>
+</div>
+
+<a class="back" href="index.html">← Back to Home</a>
+
+</div>
+
+<script>
+document.querySelectorAll("a").forEach(link=>{
+  if(link.href){
+    link.addEventListener("click", function(e){
+      const url = this.href;
+      if(url.includes("#")) return;
+
+      e.preventDefault();
+      document.body.style.opacity = "0";
+      document.body.style.transform = "translateY(-10px)";
+      document.body.style.filter = "blur(8px)";
+
+      setTimeout(()=> {
+        window.location.href = url;
+      }, 400);
+    });
+  }
+});
+</script>
+
+</body>
+</html>

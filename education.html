@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Education</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Courier New', monospace;
+  background:linear-gradient(135deg,#fff,#f7f7f7);
+  padding:40px;
+  opacity:0;
+  animation:pageLoad 0.7s ease forwards;
+}
+
+@keyframes pageLoad{
+  to{opacity:1;}
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+}
+
+/* TITLE */
+h1{
+  font-size:40px;
+  text-align:center;
+  margin-bottom:40px;
+  letter-spacing:3px;
+}
+
+/* CARD */
+.edu-card{
+  background:rgba(255,255,255,0.8);
+  border:1px solid rgba(255,20,147,0.3);
+  border-radius:20px;
+  padding:25px;
+  margin-bottom:30px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* DEGREE TITLE */
+.degree{
+  font-size:20px;
+  font-weight:bold;
+  color:#111;
+}
+
+/* UNIVERSITY */
+.uni{
+  font-size:16px;
+  margin-top:5px;
+  color:#444;
+}
+
+/* THESIS */
+.thesis-title{
+  margin-top:15px;
+  font-weight:bold;
+  color:#ff2ea6;
+}
+
+.thesis-text{
+  margin-top:8px;
+  line-height:1.6;
+  font-size:15px;
+}
+
+/* KEYWORDS */
+.keywords{
+  margin-top:10px;
+  font-size:13px;
+  color:#666;
+}
+
+/* CONFERENCES */
+.conf{
+  margin-top:10px;
+  font-size:14px;
+  color:#222;
+  padding-left:15px;
+}
+
+/* BACK LINK */
+.back{
+  display:block;
+  text-align:center;
+  margin-top:30px;
+  font-size:16px;
+  text-decoration:none;
+  color:#ff2ea6;
+  font-weight:bold;
+}
+
+.back:hover{
+  transform:scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Education</h1>
+
+<!-- ================= UNDERGRAD ================= -->
+<div class="edu-card">
+
+  <div class="degree">
+    B.E. Biomedical Engineering (First Class with Distinction, University Rank Medalist)
+  </div>
+
+  <div class="uni">
+    Anna University, India
+  </div>
+
+  <div class="thesis-title">
+    Undergraduate Thesis
+  </div>
+
+  <div class="thesis-text">
+    Developed a biosignal-based health monitoring system using embedded hardware and wireless communication.
+    The work focused on real-time physiological signal acquisition and analysis for early disease detection,
+    especially diabetes-related monitoring systems using wearable electronics.
+  </div>
+
+  <div class="keywords">
+    Keywords: Biosignal analysis, Health monitoring, ESP32, BLE engineering, Diabetes
+  </div>
+
+  <div class="thesis-title">
+    Conferences Presented
+  </div>
+
+  <div class="conf">
+    • CSIR Sponsored National Conference on “Point of Care Technology: The Next Generation in Personalized Medicine and Health Care” (POCT’22), India
+    <br><br>
+    • 6th International Conference on Electronics, Communication and Aerospace Technology (ICECA’22), India
+  </div>
+
+</div>
+
+<!-- ================= POSTGRAD ================= -->
+<div class="edu-card">
+
+  <div class="degree">
+    MSc Computational Neuroscience and Cognitive Robotics (Merit)
+  </div>
+
+  <div class="uni">
+    The University of Birmingham, United Kingdom
+  </div>
+
+  <div class="thesis-title">
+    Postgraduate Thesis
+  </div>
+
+  <div class="thesis-text">
+    Investigated neuromotor development using computational modelling and MEG signal analysis.
+    Applied signal decomposition and time–frequency methods to study preterm brain development and neural dynamics.
+    Integrated machine learning approaches to interpret high-dimensional neuroimaging data.
+  </div>
+
+  <div class="keywords">
+    Keywords: Computational neuroscience, Neuromotor development, MEG, ICA, Time-frequency analysis, Preterm brain
+  </div>
+
+  <div class="thesis-title">
+    Conferences & Presentations
+  </div>
+
+  <div class="conf">
+    • MSc Poster Presentation, University of Birmingham – Great Hall (2024)
+    <br><br>
+    • MEG UKI 24 Conference (Attended)
+  </div>
+
+</div>
+
+<a class="back" href="index.html">← Back to Home</a>
+
+</div>
+
+</body>
+</html>
