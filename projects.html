@@ -93,19 +93,19 @@ body{
 
 /* TEXT */
 .project-title{
-  font-size:20px;
+  font-size:50px;
   font-weight:bold;
   margin-bottom:10px;
 }
 
 .desc{
-  font-size:13px;
+  font-size:45px;
   line-height:1.6;
   margin-bottom:12px;
 }
 
 .keywords{
-  font-size:12px;
+  font-size:35px;
   color:#ff2ea6;
 }
 
@@ -132,13 +132,13 @@ img{
   <div class="card" onclick="show('iconicity_brain')">
     <div class="title">Iconicity in Natural Speech</div>
     <div class="subtitle">Decoding Speech + Brain</div>
-    <div style="color:#ff2ea6;font-size:11px;margin-top:4px;">★ MOST RECENT</div>
+    <div style="color:#ff2ea6;font-size:15px;margin-top:4px;">★ MOST RECENT</div>
   </div>
   
   <div class="card" onclick="show('llm')">
     <div class="title">LLM vs Brain</div>
     <div class="subtitle">Neural Network, Language + AI</div>
-    <div style="color:#ff2ea6;font-size:11px;margin-top:4px;">● ONGOING</div>
+    <div style="color:#ff2ea6;font-size:15px;margin-top:4px;">● ONGOING</div>
   </div>  
 
   <div class="card" onclick="show('air')">
@@ -207,16 +207,6 @@ img{
   </div>    
     
 
-
-
-  
-
-  
-
-
-
-
-
 </div>
 </div>
 
@@ -231,7 +221,7 @@ img{
 
   <div class="right">
 
-    <!-- ONLY IMAGE NOW -->
+    
     <img id="img" src="example.png">
 
   </div>
@@ -252,7 +242,7 @@ function show(id){
   if(id==="air"){
 
     img.style.display="block";
-    img.src="example.png"; // placeholder image
+    img.src="example.png"; 
 
     document.getElementById("title").innerHTML =
       "Air Piano: Vision-Based Musical Interaction System";
@@ -298,7 +288,7 @@ It demonstrates convergence toward optimal policy selection under repeated expos
   else if(id==="schelling"){
 
     img.style.display="block";
-    img.src="example.png";
+    img.src="schelling.png";
 
     document.getElementById("title").innerHTML =
       "Schelling Segregation Model: Emergent Spatial Dynamics";
@@ -321,7 +311,7 @@ It serves as a computational demonstration of how local decision rules influence
   else if(id==="preterm"){
 
     img.style.display="block";
-    img.src="example.png";
+    img.src="preterm.png";
 
     document.getElementById("title").innerHTML =
       "Preterm Birth and Neurodevelopmental Trajectories: A Computational Analysis";
@@ -346,7 +336,7 @@ The results provide insight into early diagnostic indicators and potential inter
   else if(id==="ir"){
 
     img.style.display="block";
-    img.src="example.png";
+    img.src="project2.png";
 
     document.getElementById("title").innerHTML =
       "Infrared Ring Interface: Wearable Interaction and Sensing System";
@@ -368,7 +358,7 @@ The system demonstrates potential applications in assistive technology, augmente
   else if(id==="cricket"){
 
     img.style.display="block";
-    img.src="example.png";
+    img.src="project3.png";
 
     document.getElementById("title").innerHTML =
       "HOWZATTT!! Bayesian Modelling of Umpire Decision-Making in Cricket";
